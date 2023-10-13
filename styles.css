@@ -4,9 +4,11 @@
     position: absolute;
     transform: scale(0.25);
 }
+
 body {
     background-image: url('images/beach_bgd.jpg');
 }
+
 #site {
     width: 100vw;
     height: 100vh;
@@ -14,7 +16,8 @@ body {
     position: relative;
     overflow: hidden;
 }
-.counterbox{
+
+.counterbox {
     position: absolute;
     left: 50%;
     top: 10%;
@@ -23,7 +26,8 @@ body {
     text-align: center;
     transform: translate(-50%, -50%);
 }
-button{
+
+button {
     background-color: aquamarine;
     padding: 25px;
     z-index: 1;
@@ -32,3 +36,14 @@ button{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+@media (max-width: 768px) {
+    button {
+        position: relative; /* Change to relative positioning for smaller screens */
+        transform: none;
+        /* Center horizontally using margin */
+        text-align: center; /* Center button content */
+    }}
+
+
+

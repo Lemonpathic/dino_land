@@ -7,14 +7,16 @@
 
 body {
     background-image: url('images/beach_bgd.jpg');
+    background-size: cover;
+    background-repeat: no-repeat
 }
 
 #site {
-    width: 100vw;
-    height: 100vh;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Use viewport height for full height */
 }
 
 .counterbox {
@@ -32,9 +34,7 @@ button {
     padding: 25px;
     z-index: 1;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
 }
 
 @media (max-width: 768px) {

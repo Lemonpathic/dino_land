@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    #site {
+      position: relative;
+    }
+    button {
+      position: relative;
+      z-index: 1; /* Set a higher z-index value to keep the button on top */
+    }
+  </style>
+</head>
+<body>
+
+<div id="site">
+  <div id="snowZone"></div>
+  <div class="counterbox">
+    <h1>Dinos Spawned</h1>
+    <h2 id="counter"></h2>
+  </div>
+
+  <button onclick="fallingSnow()">Click me</button>
+</div>
+<script>
+  var counter = 0;
+  function updateCounter() {
+    document.getElementById("counter").innerHTML = `${counter} &#129430;`;
+  }
+  function fallingSnow() {
+    var $snowflakes = $(),
+            createSnowflakes = function () {
+              var qt = 60;
+              for (var i = 0; i < qt; ++i) {
+                if (i % 2 === 0){
+                    var $snowflake = $('<div class="snowflakes"><img src="images/tri.png" alt="Snowflake"></div>');
+                  $snowflake.css({
+                    'left': (Math.random() * ($('#site').width()) - 300) + 'px', // Increase 200 for greater distance
+                    'top': (-Math.random() * ($('#site').height() + 200)) + 'px',
+                    'transform': 'scale(0.3)',// Increase 200 for greater distance
+                  });// Change the image source here
+
+                    }
+                else {
+                    var $snowflake = $('<div class="snowflakes"><img src="images/trex.png" alt="Snowflake"></div>'); // Change the image source here
+                    $snowflake.css({
+                      'left': (Math.random() * ($('#site').width()) - 300) + 'px', // Increase 200 for greater distance
+                      'top': (-Math.random() * ($('#site').height() + 200)) + 'px', // Increase 200 for greater distance
+                      'transform': 'scale(0.5)',
+                    });}
+                counter++;
+                updateCounter()
+                $snowflakes = $snowflakes.add($snowflake);
+              }
+              $('#snowZone').prepend($snowflakes);
+            },
+            runSnowStorm = function () {
+              $snowflakes.each(function () {
+                var $flake = $(this);
+                $flake.animate({
+                  top: "500px",
+                  opacity: "0",
+                }, 3000, function () {
+                  $flake.remove(); // Remove the snowflake after the animation
+                });
+              });
+            };
+    createSnowflakes();
+    runSnowStorm();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+.snowflakes {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    transform: scale(0.25);
+}
+body {
+    background-image: url('images/beach_bgd.jpg');
+}
+#site {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.counterbox{
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    align-items: center;
+    z-index: 1;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+button{
+    background-color: aquamarine;
+    padding: 25px;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

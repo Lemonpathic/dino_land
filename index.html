@@ -28,6 +28,10 @@
   </button>
 </div>
 <script>
+  const button = document.querySelector("#clickButton");
+  button.addEventListener("dblclick", function (e) {
+    e.preventDefault();
+  });
   var counter = 0;
   var rebirthStatus = false;
   var rebirthCounter = 1;

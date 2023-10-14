@@ -40,6 +40,9 @@
   function rebirth(rebirthCount) {
     function buttonDisabled(){
       document.getElementById("clickButton").disabled = true;
+      button.addEventListener("dblclick", function (e) {
+        e.preventDefault();
+      });
       setTimeout(function(){ document.getElementById("clickButton").disabled = false; }, 1500);
     }
     var rebirth_multiplier;

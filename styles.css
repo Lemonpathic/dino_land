@@ -8,7 +8,8 @@
 body {
     background-image: url('images/beach_bgd.jpg');
     background-size: cover;
-    background-repeat: no-repeat
+    background-repeat: no-repeat;
+    touch-action: manipulation;
 }
 
 #site {

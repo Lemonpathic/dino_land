@@ -40,10 +40,11 @@ button {
 @media (max-width: 768px) {
     button {
         position: relative; /* Change to relative positioning for smaller screens */
-        transform: none;
-        /* Center horizontally using margin */
+        transform: none; /* Reset any transforms */
+        left: 0; /* Reset the left property */
+        right: 0; /* Reset the right property */
         text-align: center; /* Center button content */
-    }}
-
+    }
+}
 
 
